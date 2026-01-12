@@ -97,6 +97,38 @@ body {
 @media (max-width: 600px) {
     .arrow { font-size: 40px; }
 }
+    .contact-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20,20,20,0.95);
+    border-top: 1px solid #444;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    z-index: 1100;
+}
+
+.contact-banner a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: color 0.2s;
+}
+
+.contact-banner a:hover {
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .contact-banner {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
 </style>
 </head>
 
@@ -121,6 +153,13 @@ body {
     <img id="fullImage" onclick="event.stopPropagation()">
     <span class="arrow right" onclick="nextImage(event)">&#10095;</span>
 </div>
+    <!-- Contact Banner -->
+<div class="contact-banner">
+    <a href="https://instagram.com/yourname" target="_blank">INSTAGRAM</a>
+    <a href="https://github.com/yourname" target="_blank">GITHUB</a>
+    <a href="mailto:youremail@example.com">EMAIL</a>
+</div>
+
 
 <script>
 const images = document.querySelectorAll(".gallery img");
@@ -218,5 +257,6 @@ fullImage.addEventListener("click", e => e.stopPropagation());
 
 </body>
 </html>
+
 
 
