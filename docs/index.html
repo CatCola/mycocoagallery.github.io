@@ -1,1 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+<title>My Cocoa Gallery Test</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #252525;
+    color: white;
+}
+
+/* Titles */
+.title {
+    text-align: center;
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: -10px;
+}
+.smalltitle1 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: -15px;
+
+}
+.smalltitle2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+}
+.stroke-text {
+    color: white;
+    -webkit-text-stroke: 0px black;
+}
+.stroke-textsmall {
+    color: white;
+    -webkit-text-stroke: 0px black;
+}
+
+.cocoa-font {
+    font-family: 'Fredoka', sans-serif;
+}
+
+
+
+/* Banner Image Header */
+.title-banner {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    background-image: url("Images/ImageSources/Banner.png"); /* 👈 CHANGE IMAGE */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Dark overlay */
+.title-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Text container above overlay */
+.title-banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.35s ease-out;
+    transform: scale(0);
+}
+
+/* Close */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    transform: translateY(-50%);
+}
+
+.arrow.left { left: 20px; }
+.arrow.right { right: 20px; }
+
+@media (max-width: 600px) {
+    .arrow { font-size: 40px; }
+}
+    .contact-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20,20,20,0.95);
+    border-top: 1px solid #444;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    z-index: 1100;
+}
+
+.contact-banner a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: color 0.2s;
+}
+
+.contact-banner a:hover {
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .contact-banner {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="title-banner">
+    <div class="title-banner-content">
+        <div class="smalltitle1 stroke-textsmall" style="margin-top: 25px;" >MY</div>
+        <div class="title stroke-text cocoa-font" >COCOA</div>
+        <div class="smalltitle2 stroke-textsmall">GALLERY</div>
+    </div>
+</div>
+
+
+<div class="gallery">
+
+    <img src="Images/Draw/35.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/34.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/33.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/32.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/31.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/30.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/29.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/28.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/27.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/26.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/25.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/24.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/23.png" onclick="openModal(this, event)">
+    <img src="Images/Draw/22.png" onclick="openModal(this, event)">
+    <img src="Images/Draw/21.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/20.png" onclick="openModal(this, event)">
+    <img src="Images/Draw/19.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/18.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/17.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/16.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/15.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/14.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/13.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/12.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/11.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/10.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/9.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/8.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/7.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/6.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/5.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/4.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/3.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/2.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/1.jpg" onclick="openModal(this, event)">
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="imageModal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="arrow left" onclick="prevImage(event)">&#10094;</span>
+    <img id="fullImage" onclick="event.stopPropagation()">
+    <span class="arrow right" onclick="nextImage(event)">&#10095;</span>
+</div>
+    <!-- Contact Banner -->
+<div class="contact-banner">
+    <a href="https://www.facebook.com/cocoa.naughtydog" target="_blank">FACEBOOK</a>
+    <a href="https://x.com/CocoaNaughtyDog" target="_blank">TWITTER</a>
+    <a href="https://bsky.app/profile/cocoanaughty.bsky.social" target="_blank">BLUESKY</a>
+    
+</div>
+
+
+<script>
+const images = document.querySelectorAll(".gallery img");
+const modal = document.getElementById("imageModal");
+const fullImage = document.getElementById("fullImage");
+
+let currentIndex = 0;
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+
+/* Open modal */
+function openModal(img, event) {
+    currentIndex = [...images].indexOf(img);
+    modal.style.display = "flex";
+    showImage(event);
+}
+
+
+/* Show image */
+function showImage(event) {
+    fullImage.src = images[currentIndex].src;
+    fullImage.style.transition = "none";
+    fullImage.style.transform = "translateX(0) scale(1)";
+
+    if (event) {
+        const x = event.clientX / window.innerWidth * 100;
+        const y = event.clientY / window.innerHeight * 100;
+        fullImage.style.transformOrigin = `${x}% ${y}%`;
+    }
+
+    requestAnimationFrame(() => {
+        fullImage.style.transition = "transform 0.3s ease";
+    });
+}
+
+/* Close */
+function closeModal() {
+    modal.style.display = "none";
+}
+
+/* Navigation */
+function nextImage(e) {
+    e.stopPropagation();   // ⛔ stop modal click
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+}
+
+function prevImage(e) {
+    e.stopPropagation();   // ⛔ stop modal click
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+}
+
+/* Keyboard */
+document.addEventListener("keydown", e => {
+    if (modal.style.display !== "flex") return;
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === "ArrowLeft") prevImage();
+    if (e.key === "Escape") closeModal();
+});
+
+/* TOUCH — FOLLOW FINGER */
+fullImage.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    fullImage.style.transition = "none";
+});
+
+fullImage.addEventListener("touchmove", e => {
+    if (!isDragging) return;
+
+    currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+
+    fullImage.style.transform = `translateX(${deltaX}px) scale(1)`;
+});
+
+fullImage.addEventListener("touchend", () => {
+    isDragging = false;
+    const deltaX = currentX - startX;
+
+    fullImage.style.transition = "transform 0.3s ease";
+
+    if (Math.abs(deltaX) > 80) {
+        deltaX < 0 ? nextImage() : prevImage();
+    } else {
+        fullImage.style.transform = "translateX(0) scale(1)";
+    }
+});
+
+/* Prevent modal close on image */
+fullImage.addEventListener("click", e => e.stopPropagation());
+</script>
+
+
+</body>
+</html>
+
 
