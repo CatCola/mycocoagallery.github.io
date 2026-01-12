@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Cocoa Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+<title>My Cocoa Gallery Test</title>
 
 <style>
 body {
@@ -18,7 +19,7 @@ body {
     text-align: center;
     font-size: 72px;
     font-weight: bold;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     margin-bottom: -10px;
 }
 .smalltitle1 {
@@ -26,7 +27,8 @@ body {
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 5px;
-    margin-bottom: -10px;
+    margin-bottom: -15px;
+
 }
 .smalltitle2 {
     text-align: center;
@@ -35,6 +37,50 @@ body {
     letter-spacing: 5px;
     margin-bottom: 40px;
 }
+.stroke-text {
+    color: white;
+    -webkit-text-stroke: 0px black;
+}
+.stroke-textsmall {
+    color: white;
+    -webkit-text-stroke: 0px black;
+}
+
+.cocoa-font {
+    font-family: 'Fredoka', sans-serif;
+}
+
+
+
+/* Banner Image Header */
+.title-banner {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    background-image: url("Images/ImageSources/Banner.png"); /* 👈 CHANGE IMAGE */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Dark overlay */
+.title-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Text container above overlay */
+.title-banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
 
 /* Gallery */
 .gallery {
@@ -134,16 +180,53 @@ body {
 
 <body>
 
-<div class="smalltitle1">MY</div>
-<div class="title">COCOA</div>
-<div class="smalltitle2">GALLERY</div>
+<div class="title-banner">
+    <div class="title-banner-content">
+        <div class="smalltitle1 stroke-textsmall" style="margin-top: 25px;" >MY</div>
+        <div class="title stroke-text cocoa-font" >COCOA</div>
+        <div class="smalltitle2 stroke-textsmall">GALLERY</div>
+    </div>
+</div>
+
 
 <div class="gallery">
-    <img src="Images/image5.png" onclick="openModal(0, event)">
-    <img src="Images/image4.jpg" onclick="openModal(1, event)">
-    <img src="Images/image3.jpg" onclick="openModal(2, event)">
-    <img src="Images/image2.jpg" onclick="openModal(3, event)">
-    <img src="Images/image1.jpg" onclick="openModal(4, event)">
+
+    <img src="Images/Draw/35.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/34.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/33.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/32.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/31.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/30.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/29.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/28.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/27.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/26.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/25.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/24.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/23.png" onclick="openModal(this, event)">
+    <img src="Images/Draw/22.png" onclick="openModal(this, event)">
+    <img src="Images/Draw/21.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/20.png" onclick="openModal(this, event)">
+    <img src="Images/Draw/19.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/18.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/17.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/16.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/15.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/14.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/13.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/12.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/11.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/10.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/9.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/8.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/7.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/6.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/5.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/4.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/3.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/2.jpg" onclick="openModal(this, event)">
+    <img src="Images/Draw/1.jpg" onclick="openModal(this, event)">
+
 </div>
 
 <!-- Modal -->
@@ -156,6 +239,9 @@ body {
     <!-- Contact Banner -->
 <div class="contact-banner">
     <a href="https://www.facebook.com/cocoa.naughtydog" target="_blank">FACEBOOK</a>
+    <a href="https://x.com/CocoaNaughtyDog" target="_blank">TWITTER</a>
+    <a href="https://bsky.app/profile/cocoanaughty.bsky.social" target="_blank">BLUESKY</a>
+    
 </div>
 
 
@@ -170,11 +256,12 @@ let currentX = 0;
 let isDragging = false;
 
 /* Open modal */
-function openModal(index, event) {
-    currentIndex = index;
+function openModal(img, event) {
+    currentIndex = [...images].indexOf(img);
     modal.style.display = "flex";
     showImage(event);
 }
+
 
 /* Show image */
 function showImage(event) {
@@ -255,7 +342,6 @@ fullImage.addEventListener("click", e => e.stopPropagation());
 
 </body>
 </html>
-
 
 
 
